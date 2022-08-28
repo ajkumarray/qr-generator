@@ -35,31 +35,37 @@
       }
       body{width: 100%;
         height: 100vh;
-        animation: changeBg 10s linear infinite;
+        
         display: grid;
-        background-color: #2daad8;
-
+        background: linear-gradient(-105deg,#EE7752,#E73C7E,#23A6D5,#23D5AB) ;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+       
       }
-      @keyframes changeBg{
-        0%{background-color: #28a9d8;}
-      
+      .typewriter{
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: initial; /* Keeps the content on a multi line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
 
-      20% {background-color: #d5d223;}
-      
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
 
-      30%{background-color: #23d53b;}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
       
-
-      50%{background-color: #7f23d5;}
-      55%{background-color: #b383e0;}
-      
-      60%{background-color: #27e4ab;}
-      70%{background-color: #d523a8;}
-      
-
-      80%{background-color: #d5234f;}
-      100%{background-color: #28a9d8;}
-      }
+    
     </style>
     <title>Free Online QR Code Generator</title>
   </head>
@@ -127,6 +133,7 @@
         id="generated"
         class="max-w-5xl m-auto flex flex-col text-center align-center justify-center mt-20"
       >
+      
         <!-- Spinner -->
         <div id="spinner" role="status">
           <svg
